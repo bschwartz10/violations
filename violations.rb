@@ -48,5 +48,5 @@ end
 
 violations_csv = "./violations_data.csv"
 violations_repo = FileLoader.load_csv(violations_csv)
-
+puts "                   Types                         |Count|    Earliest Date    |    Lastest Date     |"
 puts violations_repo.violation_counts_and_dates_per_type
