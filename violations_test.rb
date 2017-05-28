@@ -32,11 +32,11 @@ class ViolationsTest < Minitest::Test
     assert_equal "2012-01-03 00:00:00", violations_repo.sort_violation_dates.first.violation_date
   end
 
-  def test_earliest_violation_date_per_type
+  def test_violation_counts_and_dates_per_type
     violations_csv = "./violations_data.csv"
     violations_repo = FileLoader.load_csv(violations_csv)
 
-    assert_equal "Unsanitary conditions, not specified's earliest violation date was 2012-01-03 00:00:00", violations_repo.earliest_violation_per_type.first
+    assert_equal "Unsanitary conditions, not specified's           | 74  | 2012-01-03 00:00:00 | 2012-12-10 00:00:00 |", violations_repo.violation_counts_and_dates_per_type.first
   end
 
 end
